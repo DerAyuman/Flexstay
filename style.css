@@ -54,10 +54,11 @@ header {
     border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
+/* OBERES LOGO-STYLING: Max-height auf dezente 100px reduziert (leicht kleiner als vorher) */
 .hero-logo {
     display: block;        
-    max-width: 100%;       
-    max-height: 600px;   
+    max-width: 90%;       
+    max-height: 100px;   
     height: auto;         
     margin: 0 auto 2rem;  
     object-fit: contain;   
@@ -222,7 +223,7 @@ section {
 }
 
 /* ==========================================================================
-   5. BILDER GALERIE
+   5. BILDER GALERIE & UNTERES LOGO
    ========================================================================== */
 .gallery-grid {
     display: grid;
@@ -237,7 +238,7 @@ section {
     overflow: hidden;
     border: 1px solid var(--border);
     aspect-ratio: 4 / 3;
-    cursor: pointer; /* Klick-Indikator */
+    cursor: pointer;
 }
 
 .gallery-item .img-box {
@@ -283,8 +284,27 @@ section {
     color: var(--text-muted);
 }
 
+/* Zentrierungs-Wrapper für das untere Logo */
+.gallery-footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3.5rem;
+}
+
+/* UNTERES LOGO-STYLING: 70% Breite einer Standardkarte, mittig */
+.gallery-bottom-logo {
+    display: block;
+    width: 70%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.95;
+}
+
 /* ==========================================================================
-   5b. LIGHTBOX OVERLAY EFUKTE (FÜR DIE GROSSANSICHT)
+   5b. LIGHTBOX OVERLAY EFFEKTE (FÜR DIE GROSSANSICHT)
    ========================================================================== */
 .lightbox {
     position: fixed;
@@ -404,4 +424,6 @@ footer {
     h1 { font-size: 2.5rem; }
     .contact-box { padding: 1.5rem; }
     .lightbox-content { max-width: 95%; max-height: 85%; }
+    .hero-logo { max-height: 70px; }
+    .gallery-bottom-logo { width: 85%; }
 }
