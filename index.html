@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residenz Unbezahlbar – Exklusives Wohnen (Oder so ähnlich)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="hero-badge">Temporär verfügbar</div>
+        <h1>FlexStay</h1>
+        <p class="hero-tagline">Stilvoll, charmante Wohnungsmieten. Miete das Objekt deiner Träume.</p>
+        <a href="#anfrage" class="cta-btn">Jetzt deine Wohnung mieten</a>
+    </header>
+
+    <main>
+        <section id="details">
+            <h2 class="section-title">Die harten Fakten</h2>
+            <p class="section-desc">Wir könnten jetzt von „lichtdurchfluteten Wellness-Oasen“ sprechen. Oder wir sagen es einfach, wie es wirklich ist:</p>
+            
+            <div class="grid-facts">
+                <div class="fact-card">
+                    <h3>3.5 Zimmer</h3>
+                    <p>Genug Platz für dich, deine Pflanzen und den ungenutzten Heimtrainer in der Ecke.</p>
+                </div>
+                <div class="fact-card">
+                    <h3>Erstklassige Lage</h3>
+                    <p>Ruhig gelegen. Die Nachbarn fangen erst ab 22:00 Uhr an, aufmerksam zuzuhören.</p>
+                </div>
+                <div class="fact-card">
+                    <h3>Premium-Küche</h3>
+                    <p>Ausgestattet mit einem Kühlschrank, der theoretisch Eiswürfel fasst (Eiswürfel separat erhältlich).</p>
+                </div>
+                <div class="fact-card">
+                    <h3>Highspeed Internet</h3>
+                    <p>Perfekt für Homeoffice, damit der Zoom-Hintergrund auch gestochen scharf ruckelt.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galerie">
+            <h2 class="section-title">Visuelle Beweismittel</h2>
+            <p class="section-desc">Zehn ungeschönte, aber extrem hochwertig inszenierte Einblicke in dein potenzielles neues Imperium. (Die Bilder sind aktuell edle Symbolfotos von Unsplash – du kannst sie im CSS-Code ganz leicht durch eigene ersetzen).</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="img-box img-1"></div>
+                    <div class="gallery-caption">
+                        <h4>Der Grundriss</h4>
+                        <p>Die Anordnung der Räume ist optimal für einen komfortablen Alltag.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-box img-2"></div>
+                    <div class="gallery-caption">
+                        <h4>Das Wohnzimmer</h4>
+                        <p>Viel Platz, zum idealen Aufbau von Möbel und Schränken</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-box img-3"></div>
+                    <div class="gallery-caption">
+                        <h4>Das Arbeitszimmer</h4>
+                        <p>Der perfekte Raum um Arbeit zu verrichten.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-box img-4"></div>
+                    <div class="gallery-caption">
+                        <h4>Beispiel Wohnzimmer</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-box img-5"></div>
+                    <div class="gallery-caption">
+                        <h4>Beispiel Wohnzimmer</h4>
+
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-box img-6"></div>
+                    <div class="gallery-caption">
+                        <h4>Beispiel Arbeitszimmer</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="anfrage">
+            <div class="contact-box">
+                <h2 style="margin-bottom: 0.5rem; color: #fff;">Bewerbungsverfahren</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Hinterlasse deine Daten um einen Besichtigungstermin zu vereinbaren.</p>
+                
+                <form action="#" method="POST" onsubmit="alert('Danke! Ihre Bewerbung, wäre dies eine echte Webseite, wäre eingegangen.'); return false;">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required placeholder="Max Mustermann">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail-Adresse</label>
+                        <input type="email" id="email" required placeholder="dein.name@beispiel.de">
+                    </div>
+                    <div class="form-group">
+                        <label for="liquiditaet">Finanzieller Status</label>
+                        <select id="liquiditaet">
+                            <option>Multimillardär</option>
+                            <option>Nur Millionär</option>
+                            <option>Geringverdiener</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Nachricht</label>
+                        <textarea id="text" rows="4" required placeholder="Wollen Sie uns Weiteres mitteilen?"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Mietinteresse abschicken</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Residenz Unbezahlbar. Beispielwebseite ohne rechtliche Gewährleistung.</p>
+    </footer>
+
+</body>
+</html>
