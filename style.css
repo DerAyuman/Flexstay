@@ -271,6 +271,7 @@ section {
 .img-4 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild4.jpeg'); }
 .img-5 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild5.jpeg'); }
 .img-6 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild6.jpeg'); }
+.img-7 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild7.jpeg'); }
 
 .gallery-caption {
     position: absolute;
