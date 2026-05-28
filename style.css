@@ -54,7 +54,6 @@ header {
     border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
-/* LOGO-STYLING: Perfekt zentriert und skaliert */
 .hero-logo {
     display: block;        
     max-width: 100%;       
@@ -141,8 +140,6 @@ section {
 /* ==========================================================================
    4. OPTIMIERTES DESIGN FÜR "DIE HARTEN FAKTEN"
    ========================================================================== */
-
-/* Das Gesamt-Grid für die Kärtchen (auf 320px erhöht) */
 .grid-facts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -150,7 +147,6 @@ section {
     margin-top: 2rem;
 }
 
-/* Die veredelte Fact-Card mit subtilem Tiefenverlauf */
 .fact-card {
     background: linear-gradient(145deg, #1e293b, #111827);
     padding: 2.5rem 2rem;
@@ -162,14 +158,12 @@ section {
     flex-direction: column;
 }
 
-/* Interaktiver Hover-Effekt */
 .fact-card:hover {
     transform: translateY(-5px);
     border-color: rgba(251, 191, 36, 0.4);
     box-shadow: 0 15px 40px rgba(251, 191, 36, 0.05);
 }
 
-/* Titel mit edler Untertrennung */
 .fact-card h3 {
     color: var(--accent);
     font-size: 1.35rem;
@@ -180,14 +174,12 @@ section {
     padding-bottom: 0.75rem;
 }
 
-/* Listen-Styling ohne Standard-Punkte für exklusiven Look */
 .fact-card ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-/* Listenpunkte mit dezenten horizontalen Raumtrennern */
 .fact-card li {
     font-size: 0.95rem;
     color: var(--text-muted);
@@ -206,7 +198,6 @@ section {
     padding-top: 0;
 }
 
-/* Minimalistischer, goldener Custom-Indikator vor jedem Punkt */
 .fact-card li::before {
     content: "▪";
     position: absolute;
@@ -217,11 +208,10 @@ section {
     opacity: 0.8;
 }
 
-.fact-child li:first-child::before {
+.fact-card li:first-child::before {
     top: 0;
 }
 
-/* Macht die Überschriften der Stichpunkte zu einem eigenen, klaren Block */
 .fact-card li strong {
     color: var(--text-main);
     display: block;
@@ -232,7 +222,7 @@ section {
 }
 
 /* ==========================================================================
-   5. BILDER GALERIE (BILD-PFADE IM CSS)
+   5. BILDER GALERIE
    ========================================================================== */
 .gallery-grid {
     display: grid;
@@ -247,6 +237,7 @@ section {
     overflow: hidden;
     border: 1px solid var(--border);
     aspect-ratio: 4 / 3;
+    cursor: pointer; /* Klick-Indikator */
 }
 
 .gallery-item .img-box {
@@ -264,14 +255,12 @@ section {
     transform: scale(1.05);
 }
 
-/* Hinterlegte Bild-Pfade im CSS */
 .img-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild1.jpeg'); }
 .img-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild2.jpeg'); }
 .img-3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild3.jpeg'); }
 .img-4 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild4.jpeg'); }
 .img-5 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild5.jpeg'); }
 .img-6 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild6.jpeg'); }
-.img-7 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild7.jpeg'); }
 
 .gallery-caption {
     position: absolute;
@@ -292,6 +281,55 @@ section {
 .gallery-caption p {
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5b. LIGHTBOX OVERLAY EFUKTE (FÜR DIE GROSSANSICHT)
+   ========================================================================== */
+.lightbox {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--border);
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.lightbox-close:hover {
+    color: var(--accent);
 }
 
 /* ==========================================================================
@@ -362,8 +400,8 @@ footer {
     font-size: 0.875rem;
 }
 
-/* Responsive Anpassungen */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     .contact-box { padding: 1.5rem; }
+    .lightbox-content { max-width: 95%; max-height: 85%; }
 }
