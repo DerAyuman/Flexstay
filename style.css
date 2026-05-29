@@ -257,6 +257,7 @@ section {
 }
 
 .img-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild1.jpeg'); }
+.img-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild2.jpeg'); }
 .img-4 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild4.jpeg'); }
 .img-5 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild5.jpeg'); }
 .img-6 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('img/bild6.jpeg'); }
