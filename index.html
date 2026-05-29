@@ -84,20 +84,6 @@
                         <p>Die Anordnung der Räume ist optimal für einen komfortablen Alltag.</p>
                     </div>
                 </div>
-                <div class="gallery-item" data-large="img/bild2.jpeg">
-                    <div class="img-box img-2"></div>
-                    <div class="gallery-caption">
-                        <h4>Das Wohnzimmer</h4>
-                        <p>Viel Platz, zum idealen Aufbau von Möbel und Schränken</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-large="img/bild3.jpeg">
-                    <div class="img-box img-3"></div>
-                    <div class="gallery-caption">
-                        <h4>Das Arbeitszimmer</h4>
-                        <p>Der perfekte Raum um Arbeit zu verrichten.</p>
-                    </div>
-                </div>
                 <div class="gallery-item" data-large="img/bild4.jpeg">
                     <div class="img-box img-4"></div>
                     <div class="gallery-caption">
@@ -137,14 +123,24 @@
                         <label for="email">E-Mail-Adresse</label>
                         <input type="email" id="email" required placeholder="dein.name@beispiel.de">
                     </div>
+                    
                     <div class="form-group">
-                        <label for="liquiditaet">Finanzieller Status</label>
-                        <select id="liquiditaet">
-                            <option>Multimillardär</option>
-                            <option>Nur Millionär</option>
-                            <option>Geringverdiener</option>
+                        <label for="liquiditaet">Monatliches Nettoeinkommen</label>
+                        <select id="liquiditaet" onchange="toggleGehaltInput()">
+                            <option value="unter-1000">Unter 1.000 €</option>
+                            <option value="1000-2000">1.000 € bis 2.000 €</option>
+                            <option value="2000-3000">2.000 € bis 3.000 €</option>
+                            <option value="3000-4000">3.000 € bis 4.000 €</option>
+                            <option value="ueber-4000">Über 4.000 €</option>
+                            <option value="custom">Anderes Gehalt (Freitext)...</option>
                         </select>
                     </div>
+
+                    <div class="form-group" id="custom-gehalt-group" style="display: none;">
+                        <label for="custom-gehalt">Exakter Betrag oder Details zum Einkommen</label>
+                        <input type="text" id="custom-gehalt" placeholder="z. B. 1.850 € Netto oder Student mit Bürgschaft">
+                    </div>
+
                     <div class="form-group">
                         <label for="text">Nachricht</label>
                         <textarea id="text" rows="4" required placeholder="Wollen Sie uns Weiteres mitteilen?"></textarea>
@@ -165,6 +161,24 @@
     </footer>
 
     <script>
+        // Logik für das Ein- und Ausblenden des Gehaltsfeldes
+        function toggleGehaltInput() {
+            const selectField = document.getElementById('liquiditaet');
+            const customInputGroup = document.getElementById('custom-gehalt-group');
+            const customInput = document.getElementById('custom-gehalt');
+
+            if (selectField.value === 'custom') {
+                customInputGroup.style.display = 'block';
+                customInput.required = true;
+                customInput.focus();
+            } else {
+                customInputGroup.style.display = 'none';
+                customInput.required = false;
+                customInput.value = '';
+            }
+        }
+
+        // Lightbox Logik
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.lightbox-close');
